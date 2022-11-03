@@ -26,19 +26,24 @@ namespace IterationStatements
             int voter = int.Parse(Console.ReadLine());
             Console.WriteLine(VoteAge(voter));
 
+            Console.WriteLine("Type in a number to see if a number is in a range");
             int sender = int.Parse(Console.ReadLine());
             Console.WriteLine(CheckRange(sender));
 
-            Console.WriteLine(MultiplyTable(2, 3));
+            Console.WriteLine("Type in a number");
+            int sender1 = int.Parse(Console.ReadLine());
+            MultiplyTable(sender1);
 
 
 
         }
         public static void NumOneThousand()
         {
-            for (int i = 1000; i >= 1000; i--)
-
+             for (int i = 1000; i >= 1000; i--)
+            {
                 Console.WriteLine(i);
+            }
+                
         }
 
         public static void NumByThrees()
@@ -59,41 +64,29 @@ namespace IterationStatements
         public static string EvenOdd(int x)
         {
             var test = (x % 2);
-            string oddEven;
-            {
-                if (test == 0)
-                    oddEven = "this is an even number!!";
-                else
-                    oddEven = "this is an odd number!!";
-                return oddEven;
 
-            }
+            if (test == 0)
+                return "this is an even number!!";
+            else
+                return "this is an odd number!!";
 
 
-        }
+        } 
 
         public static string CheckPlusMinus(int y)
         {
-            string negPos;
-            {
-                if (y > 0)
-                    negPos = ("This is a positive number");
-                else
-                    negPos = ("This is a negative number");
             
-                return negPos;
-            }
+                if (y > 0)
+                    return "This is a positive number";
+                else
+                    return ("This is a negative number");
         }
         public static string VoteAge(int z)
         {
-            string voter;
-            {
                 if (z >= 18)
-                    voter = ("You can vote!!");
+                    return "You can vote!!";
                 else 
-                    voter = ("You are too young to vote");
-                return voter;
-            }
+                    return "You are too young to vote";
         }
 
         public static string CheckRange(int sender)
@@ -107,27 +100,17 @@ namespace IterationStatements
                 return $"{sender} is not within the range of {lowerValue} - {upperValue}";
         }
 
-        
 
-       
-        public static string MultiplyTable(int d, int e)
+
+
+        public static void MultiplyTable(int number)
         {
-            int number, multiplier;
-                Console.WriteLine("Enter a number");
-                number = int.Parse(Console.ReadLine());
-                StringBuilder sb = new();
-            
-            for (multiplier = 1; multiplier <= 12; multiplier++)
+            for (int multiplier = 1; multiplier <= 12; multiplier++)
             {
-                sb.AppendLine($"{number} * {multiplier} = {number * multiplier}");
-                
+                Console.WriteLine($"{number} * {multiplier} = {number * multiplier}");
             }
-
-            
            
-            return sb.ToString();
-            
-        }
+        }  
     }
 }
 
